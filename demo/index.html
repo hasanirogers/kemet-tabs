@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
 </head>
@@ -14,7 +14,7 @@
     import '../kemet-tab-panel.js';
 
     document.addEventListener('kemet-tab-changed', (event) => {
-      document.querySelector('h1 span').innerHTML = event.detail;
+      if(event.detail) document.querySelector('h1 span').innerHTML = event.detail;
     });
 
     render(
@@ -35,6 +35,19 @@
             <kemet-tab-panel panel="ffx">
               <img src="https://www.pngkey.com/png/full/76-768324_final-fantasy-x-logo-png-final-fantasy-x.png" />
             </kemet-tab-panel>
+          </section>
+        </kemet-tabs>
+        <br></br><hr></hr><br></br>
+        <kemet-tabs>
+          <nav slot="links">
+            <kemet-tab>One</kemet-tab>
+            <kemet-tab>Two</kemet-tab>
+            <kemet-tab>Three</kemet-tab>
+          </nav>
+          <section slot="panels">
+            <kemet-tab-panel>Panel One</kemet-tab-panel>
+            <kemet-tab-panel>Panel Two</kemet-tab-panel>
+            <kemet-tab-panel>Panel Three</kemet-tab-panel>
           </section>
         </kemet-tabs>
       `,
