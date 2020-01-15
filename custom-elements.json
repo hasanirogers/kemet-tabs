@@ -1,0 +1,89 @@
+{
+  "version": 2,
+  "tags": [
+    {
+      "name": "kemet-tabs",
+      "description": "The tabs container element.",
+      "properties": [
+        {
+          "name": "selected",
+          "type": "String",
+          "description": "Represents which tab is currently selected.",
+          "default": "Hey there"
+        }
+      ],
+      "events": [
+        {
+          "name": "kemet-tab-changed",
+          "description": "Called when a tab is changed."
+        }
+      ],
+      "slots": [
+        {
+          "name": "links",
+          "description": "The tabs that link to a panel."
+        },
+        {
+          "name": "panel",
+          "description": "The content that corresponds to each tab."
+        }
+      ],
+      "cssProperties": []
+    },
+    {
+      "name": "kemet-tab",
+      "description": "A tab that serves as a link to a panel.",
+      "properties": [
+        {
+          "name": "selected",
+          "type": "Boolean",
+          "description": "Is applied to the active tab.",
+          "default": false
+        },
+        {
+          "name": "link",
+          "type": "String",
+          "description": "Represents which panel corresponds to the tab."
+        }
+      ],
+      "events": [
+        {
+          "name": "kemet-tab-changed",
+          "description": "Called when a tab is changed."
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "description": "The contents of the tab."
+        }
+      ],
+      "cssProperties": []
+    },
+    {
+      "name": "kemet-tab-panel",
+      "description": "Shows the contents of a tab.",
+      "properties": [
+        {
+          "name": "selected",
+          "type": "Boolean",
+          "description": "Is applied to the active panel.",
+          "default": false
+        },
+        {
+          "name": "panel",
+          "type": "String",
+          "description": "The name of the panel for linking purposes."
+        }
+      ],
+      "events": [],
+      "slots": [
+        {
+          "name": "",
+          "description": "The contents of the panel."
+        }
+      ],
+      "cssProperties": []
+    }
+  ]
+}

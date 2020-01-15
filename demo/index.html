@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Current Tab: <span>ffxv</span></h1>
+  <div id="demo"></div>
+
+  <script type="module">
+    import { html, render } from 'lit-html';
+    import '../kemet-tabs.js';
+    import '../kemet-tab.js';
+    import '../kemet-tab-panel.js';
+
+    document.addEventListener('kemet-tab-changed', (event) => {
+      document.querySelector('h1 span').innerHTML = event.detail;
+    });
+
+    render(
+      html`
+        <kemet-tabs selected="ffxv">
+          <nav slot="links">
+            <kemet-tab link="ffvii">Final Fantasy VII</kemet-tab>
+            <kemet-tab link="ffxv">Final Fantasy XV</kemet-tab>
+            <kemet-tab link="ffx">Final Fantasy X</kemet-tab>
+          </nav>
+          <section slot="panels">
+            <kemet-tab-panel panel="ffvii">
+              <img src="https://cdn.freebiesupply.com/logos/large/2x/final-fantasy-vii-logo-png-transparent.png" />
+            </kemet-tab-panel>
+            <kemet-tab-panel panel="ffxv">
+              <img src="https://cdn.gearnuke.com/wp-content/uploads/2016/07/final-fantasy-xv-1-2-768x432.png" />
+            </kemet-tab-panel>
+            <kemet-tab-panel panel="ffx">
+              <img src="https://www.pngkey.com/png/full/76-768324_final-fantasy-x-logo-png-final-fantasy-x.png" />
+            </kemet-tab-panel>
+          </section>
+        </kemet-tabs>
+      `,
+      document.querySelector('#demo')
+    );
+  </script>
+</body>
+</html>
