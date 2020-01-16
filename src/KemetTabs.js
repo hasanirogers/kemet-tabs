@@ -9,7 +9,6 @@ export class KemetTabs extends LitElement {
         type: String,
         reflect: true,
       },
-
       'selectedIndex': {
         type: Number,
       }
@@ -71,8 +70,9 @@ export class KemetTabs extends LitElement {
       this.panels = this.panels.concat(panel);
     });
 
-    this.tabs[1].selected = true;
-    this.panels[1].selected = true;
+    // default to the first tab/panel selected
+    if(this.tabs.length > 0) this.tabs[0].selected = true;
+    if(this.panels.length > 0) this.panels[0].selected = true;
   }
 
   selectTab() {

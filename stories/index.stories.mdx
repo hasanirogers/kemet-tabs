@@ -29,8 +29,11 @@ import '@kemet/kemet-tabs/kemet-tabs.js';
 import '@kemet/kemet-tabs/kemet-tab.js';
 import '@kemet/kemet-tabs/kemet-tab-panel.js';
 ```
+
+### Using the selected attribute
+Use the `selected` attribute if you want to explicitly define which tab corresponds to which panel. You must name all panels and tabs with `link` and `panel` attributes respectively. You then set initial tab/panel that's selected with the `selected` attribute.
 <Preview withToolbar>
-  <Story name="Standard">
+  <Story name="Using Selected">
     {html`
       <kemet-tabs selected="ffxv">
         <nav slot="links">
@@ -50,6 +53,27 @@ import '@kemet/kemet-tabs/kemet-tab-panel.js';
           </kemet-tab-panel>
         </section>
       </kemet-tabs>
+    `}
+  </Story>
+</Preview>
+
+### Not using the selected attribute
+The following example shows how to use the tabs without the selected attribute. If you dont' use the selected attrbiute `kemet-tabs` will figure out tabbing based on index so markup order become relavent.
+<Preview withToolbar>
+  <Story name="Not Using Selected">
+    {html`
+      <kemet-tabs>
+          <nav slot="links">
+            <kemet-tab>One</kemet-tab>
+            <kemet-tab>Two</kemet-tab>
+            <kemet-tab>Three</kemet-tab>
+          </nav>
+          <section slot="panels">
+            <kemet-tab-panel>Panel One</kemet-tab-panel>
+            <kemet-tab-panel>Panel Two</kemet-tab-panel>
+            <kemet-tab-panel>Panel Three</kemet-tab-panel>
+          </section>
+        </kemet-tabs>
     `}
   </Story>
 </Preview>

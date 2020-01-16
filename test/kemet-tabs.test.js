@@ -68,6 +68,37 @@ describe('KemetTabs', () => {
     });
   });
 
+  it('has a default selectedIndex of 0', async () => {
+    const element = await fixture(html`
+      <kemet-tabs></kemet-tabs>
+    `);
+
+    expect(element.selectedIndex).to.equal(0);
+  });
+
+  it('should correctly select a tab by index', async () => {
+    const element = await fixture(html`
+      <kemet-tabs>
+        <nav slot="links">
+          <kemet-tab>One</kemet-tab>
+          <kemet-tab>Two</kemet-tab>
+          <kemet-tab>Three</kemet-tab>
+        </nav>
+        <section slot="panels">
+          <kemet-tab-panel>Panel One</kemet-tab-panel>
+          <kemet-tab-panel>Panel Two</kemet-tab-panel>
+          <kemet-tab-panel>Panel Three</kemet-tab-panel>
+        </section>
+      </kemet-tabs>
+    `);
+
+    element.querySelector('kemet-tab:last-child').click();
+
+    element.addEventListener('kemet-tab-selected', () => {
+      expect(element.selectedIndex).to.equal(2);
+    });
+  });
+
   it('snapshot', async () => {
     const element = await fixture(html`
       <kemet-tabs></kemet-tabs>
