@@ -1,17 +1,16 @@
 /* eslint-disable no-param-reassign */
-import { LitElement, html} from 'lit-element';
+import { LitElement, html } from 'lit-element';
 
 export class KemetTabs extends LitElement {
-
   static get properties() {
     return {
-      'selected': {
+      selected: {
         type: String,
         reflect: true,
       },
-      'selectedIndex': {
+      selectedIndex: {
         type: Number,
-      }
+      },
     };
   }
 
@@ -26,12 +25,8 @@ export class KemetTabs extends LitElement {
 
   render() {
     return html`
-      <nav id="links">
-        <slot name="links"></slot>
-      </nav>
-      <section id="panels">
-        <slot name="panels"></slot>
-      </section>
+      <slot name="links"></slot>
+      <slot name="panels"></slot>
     `;
   }
 
@@ -71,13 +66,13 @@ export class KemetTabs extends LitElement {
     });
 
     // default to the first tab/panel selected
-    if(this.tabs.length > 0) this.tabs[0].selected = true;
-    if(this.panels.length > 0) this.panels[0].selected = true;
+    if (this.tabs.length > 0) this.tabs[0].selected = true;
+    if (this.panels.length > 0) this.panels[0].selected = true;
   }
 
   selectTab() {
     // if the user uses the selected attribute select by it
-    if(this.selected) {
+    if (this.selected) {
       this.tabs.forEach(tab => {
         const tabName = tab.getAttribute('link');
 
@@ -89,10 +84,10 @@ export class KemetTabs extends LitElement {
         }
       });
 
-    // otherwise select by index
+      // otherwise select by index
     } else {
       this.tabs.forEach(tab => {
-        if(this.selectedIndex === tab.index) {
+        if (this.selectedIndex === tab.index) {
           tab.selected = true;
         } else {
           tab.selected = false;
@@ -103,7 +98,7 @@ export class KemetTabs extends LitElement {
 
   selectPanel() {
     // if the user uses the selected attribute select by it
-    if(this.selected) {
+    if (this.selected) {
       this.panels.forEach(panel => {
         const panelName = panel.getAttribute('panel');
 
@@ -114,10 +109,10 @@ export class KemetTabs extends LitElement {
         }
       });
 
-    // otherwise select by index
+      // otherwise select by index
     } else {
       this.panels.forEach(panel => {
-        if(this.selectedIndex === panel.index) {
+        if (this.selectedIndex === panel.index) {
           panel.selected = true;
         } else {
           panel.selected = false;
@@ -141,7 +136,7 @@ export class KemetTabs extends LitElement {
     if (this.selected) {
       this.selected = event.detail.getAttribute('link');
 
-    // otherwise use the generated index
+      // otherwise use the generated index
     } else {
       this.selectedIndex = event.detail.index;
     }

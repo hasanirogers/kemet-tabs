@@ -2,6 +2,9 @@
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@kemet/kemet-styles@latest/dist/kemet.components.css" />
 </head>
 <body>
   <h1>Current Tab: <span>ffxv</span></h1>
@@ -19,7 +22,7 @@
 
     render(
       html`
-        <kemet-tabs selected="ffxv">
+        <kemet-tabs class="horizontal" selected="ffxv">
           <nav slot="links">
             <kemet-tab link="ffvii">Final Fantasy VII</kemet-tab>
             <kemet-tab link="ffxv">Final Fantasy XV</kemet-tab>
@@ -35,19 +38,6 @@
             <kemet-tab-panel panel="ffx">
               <img src="https://www.pngkey.com/png/full/76-768324_final-fantasy-x-logo-png-final-fantasy-x.png" />
             </kemet-tab-panel>
-          </section>
-        </kemet-tabs>
-        <br></br><hr></hr><br></br>
-        <kemet-tabs>
-          <nav slot="links">
-            <kemet-tab>One</kemet-tab>
-            <kemet-tab>Two</kemet-tab>
-            <kemet-tab>Three</kemet-tab>
-          </nav>
-          <section slot="panels">
-            <kemet-tab-panel>Panel One</kemet-tab-panel>
-            <kemet-tab-panel>Panel Two</kemet-tab-panel>
-            <kemet-tab-panel>Panel Three</kemet-tab-panel>
           </section>
         </kemet-tabs>
       `,

@@ -1,6 +1,6 @@
 {
   "name": "@kemet/kemet-tabs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of components to enable tab behavior.",
   "author": "kemet-tabs",
   "license": "MIT",
@@ -27,17 +27,17 @@
     "lit-element": "^2.2.1"
   },
   "devDependencies": {
-    "es-dev-server": "^1.23.0",
-    "eslint": "^6.1.0",
+    "@open-wc/demoing-storybook": "^1.0.1",
     "@open-wc/eslint-config": "^2.0.0",
     "@open-wc/prettier-config": "^0.1.10",
-    "husky": "^1.0.0",
-    "lint-staged": "^8.0.0",
-    "@open-wc/testing-karma": "^3.0.0",
-    "deepmerge": "^3.2.0",
-    "@open-wc/testing-karma-bs": "^1.0.0",
     "@open-wc/testing": "^2.0.0",
-    "@open-wc/demoing-storybook": "^1.0.1"
+    "@open-wc/testing-karma": "^3.0.0",
+    "@open-wc/testing-karma-bs": "^1.3.94",
+    "deepmerge": "^3.2.0",
+    "es-dev-server": "^1.23.0",
+    "eslint": "^6.1.0",
+    "husky": "^1.0.0",
+    "lint-staged": "^8.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -64,5 +64,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hasanirogers/kemet-tabs.git"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/hasanirogers/kemet-tabs/issues"
+  },
+  "homepage": "http://kemet.online/tabs"
 }
